@@ -1,0 +1,87 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+	<modelVersion>4.0.0</modelVersion>
+
+	<parent>
+		<groupId>com.mk96</groupId>
+		<artifactId>common</artifactId>
+		<version>1.0.0</version>
+	</parent>
+
+	<name>mk-common-modules</name>
+
+	<groupId>com.mk96.common</groupId>
+	<artifactId>modules</artifactId>
+	<version>1.0.0</version>
+
+	<packaging>pom</packaging>
+
+	<modules>
+		<module>shared</module>
+		<module>test</module>
+	</modules>
+
+	<properties>
+
+		<!-- java -->
+		<java.version>17</java.version>
+
+		<!-- dependencys -->
+		<spring.version>3.3.4</spring.version>
+		<junit.version>5.11.1</junit.version>
+		<apache.commons.version>3.17.0</apache.commons.version>
+		<commons-io.version>2.17.0</commons-io.version>
+
+	</properties>
+
+	<dependencyManagement>
+		<dependencies>
+
+			<!-- boms -->
+			<dependency>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-dependencies</artifactId>
+				<version>${spring.version}</version>
+				<type>pom</type>
+				<scope>import</scope>
+			</dependency>
+			<dependency>
+				<groupId>org.junit</groupId>
+				<artifactId>junit-bom</artifactId>
+				<version>${junit.version}</version>
+				<type>pom</type>
+				<scope>import</scope>
+			</dependency>
+
+			<!-- dependencys -->
+			<dependency>
+				<groupId>org.apache.commons</groupId>
+				<artifactId>commons-lang3</artifactId>
+				<version>${apache.commons.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>commons-io</groupId>
+				<artifactId>commons-io</artifactId>
+				<version>${commons-io.version}</version>
+			</dependency>
+
+		</dependencies>
+	</dependencyManagement>
+
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>3.8.1</version>
+				<configuration>
+					<source>${java.version}</source>
+					<target>${java.version}</target>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+
+</project>

@@ -1,0 +1,48 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+    <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+		<groupId>com.mk96</groupId>
+		<artifactId>common</artifactId>
+		<version>1.0.0</version>
+	</parent>
+
+    <name>mk-common-group</name>
+    
+    <groupId>com.mk96.common</groupId>
+    <artifactId>group</artifactId>
+    <version>1.0.0</version>
+    
+    <packaging>pom</packaging>
+
+    <properties>
+
+		<!-- java -->
+        <java.version>17</java.version>
+
+		<!-- repos -->
+        <common-shared.version>1.0.0</common-shared.version>
+        <common-test.version>1.0.0</common-test.version>
+
+    </properties>
+    
+
+    <dependencies>
+
+        <dependency>
+            <groupId>com.mk96.common</groupId>
+            <artifactId>shared</artifactId>
+            <version>${common-shared.version}</version>
+        </dependency>
+        <dependency>
+			<groupId>com.mk96.common</groupId>
+			<artifactId>test</artifactId>
+			<version>${common-test.version}</version>
+		</dependency>
+
+    </dependencies>
+
+</project>
