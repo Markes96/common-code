@@ -1,0 +1,56 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+	<modelVersion>4.0.0</modelVersion>
+
+	<name>mk-common-bom</name>
+
+	<parent>
+		<groupId>org.mk96.common</groupId>
+		<artifactId>project</artifactId>
+		<version>1.0.0</version>
+	</parent>
+
+	<artifactId>bom</artifactId>
+	<version>1.0.0</version>
+
+	<packaging>pom</packaging>
+
+	<properties>
+
+		<!-- core -->
+		<core.version>1.0.0</core.version>
+
+		<!-- test -->
+		<test.version>1.0.0</test.version>
+		<test-template.version>1.0.0</test-template.version>
+
+	</properties>
+
+	<dependencyManagement>
+		<dependencies>
+
+			<!-- core -->
+			<dependency>
+				<groupId>org.mk96.common</groupId>
+				<artifactId>core</artifactId>
+				<version>${core.version}</version>
+			</dependency>
+
+			<!-- test -->
+			<dependency>
+				<groupId>org.mk96.common</groupId>
+				<artifactId>test</artifactId>
+				<version>${test.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.mk96.common</groupId>
+				<artifactId>test-template</artifactId>
+				<version>${test-template.version}</version>
+			</dependency>
+
+		</dependencies>
+	</dependencyManagement>
+
+</project>

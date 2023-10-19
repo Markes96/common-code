@@ -1,0 +1,46 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+	<modelVersion>4.0.0</modelVersion>
+
+	<name>mk-common-project</name>
+
+	<groupId>org.mk96.common</groupId>
+	<artifactId>project</artifactId>
+	<version>1.0.0</version>
+
+	<packaging>pom</packaging>
+
+	<modules>
+		<module>bom</module>
+		<module>modules</module>
+	</modules>
+
+	<properties>
+		<java.version>21</java.version>
+	</properties>
+
+	<distributionManagement>
+		<repository>
+			<id>github</id>
+			<name>Mk96 common-code packages</name>
+			<url>https://maven.pkg.github.com/Markes96/common-code</url>
+		</repository>
+	</distributionManagement>
+
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>3.8.1</version>
+				<configuration>
+					<source>${java.version}</source>
+					<target>${java.version}</target>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+
+</project>

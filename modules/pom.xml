@@ -1,0 +1,84 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+	<modelVersion>4.0.0</modelVersion>
+
+	<name>mk-common-modules</name>
+
+	<parent>
+		<groupId>org.mk96.common</groupId>
+		<artifactId>project</artifactId>
+		<version>1.0.0</version>
+	</parent>
+
+	<artifactId>modules</artifactId>
+	<version>1.0.0</version>
+
+	<packaging>pom</packaging>
+
+	<modules>
+		<module>core</module>
+		<module>test</module>
+		<module>test-template</module>
+	</modules>
+
+	<properties>
+
+		<!-- repos -->
+		<bom.version>1.0.0</bom.version>
+
+		<!-- boms -->
+		<spring.version>3.5.0</spring.version>
+		<junit.version>5.11.1</junit.version>
+
+		<!-- dependencies -->
+		<apache.commons.version>3.17.0</apache.commons.version>
+		<commons-io.version>2.17.0</commons-io.version>
+
+	</properties>
+
+	<dependencyManagement>
+		<dependencies>
+
+			<!-- repos -->
+			<dependency>
+				<groupId>org.mk96.common</groupId>
+				<artifactId>bom</artifactId>
+				<version>${bom.version}</version>
+				<type>pom</type>
+				<scope>import</scope>
+			</dependency>
+
+			<!-- boms -->
+			<dependency>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-dependencies</artifactId>
+				<version>${spring.version}</version>
+				<type>pom</type>
+				<scope>import</scope>
+			</dependency>
+			<dependency>
+				<groupId>org.junit</groupId>
+				<artifactId>junit-bom</artifactId>
+				<version>${junit.version}</version>
+				<type>pom</type>
+				<scope>import</scope>
+			</dependency>
+
+			<!-- dependencies -->
+			<dependency>
+				<groupId>org.apache.commons</groupId>
+				<artifactId>commons-lang3</artifactId>
+				<version>${apache.commons.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>commons-io</groupId>
+				<artifactId>commons-io</artifactId>
+				<version>${commons-io.version}</version>
+			</dependency>
+
+		</dependencies>
+	</dependencyManagement>
+
+</project>
